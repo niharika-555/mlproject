@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+    <title>Classification of stroke disease using machine learning algorithms</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="static/css/ie/html5shiv.js"></script><![endif]-->
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/jquery.dropotron.min.js"></script>
+		<script src="static/js/jquery.scrollgress.min.js"></script>
+		<script src="static/js/jquery.scrolly.min.js"></script>
+		<script src="static/js/jquery.slidertron.min.js"></script>
+		<script src="static/js/skel.min.js"></script>
+		<script src="static/js/skel-layers.min.js"></script>
+		<script src="static/js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="static/css/skel.css" />
+			<link rel="stylesheet" href="static/css/style.css" />
+			<link rel="stylesheet" href="static/css/style-xlarge.css" />
+		</noscript>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!--[if lte IE 9]><link rel="stylesheet" href="static/css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie/v8.css" /><![endif]-->
+        <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+	</head>
+			<body>
+				<body class="landing">
+			<header id="header" class="alt skel-layers-fixed">
+			<div class="topnav">
+				  <ul class="nav" style="
+    height: 65px;
+">
+                            <li class="scroll-to-section"><a href="/" >Home</a></li>
+                            <li class="scroll-to-section"><a href="{{url_for('upload')}}" class="active">Upload Dataset</a></li>
+                            <li class="scroll-to-section"><a href="{{url_for('view')}}">View Dataset</a></li>
+                            <li class="scroll-to-section"><a href="#t">Training</a></li>
+                            <li class="scroll-to-section"><a href="#m">Model Performance</a></li>
+                            <li class="scroll-to-section"><a href="#p">Prediction</a></li>
+                            <li class="scroll-to-section"><a href="#g">Graph</a></li>
+
+                        </ul>
+
+			</div>
+			</header>
+				</body>
+			<section id="main" class="wrapper style1" style="background-color:#3484c3">
+				<header class="major" >
+					<center>
+						<div class="col-md-8">
+						  {% with messages = get_flashed_messages(with_categories=true) %}
+							{% if messages %}
+							  {% for category, message in messages %}
+								<div class="alert alert-{{ category }}">
+								  {{ message }}
+								</div>
+							  {% endfor %}
+							{% endif %}
+						  {% endwith %}
+			<!--			  {% block content %}{% endblock %}-->
+						</div>
+		       </center>
+					<div align="center">
+					<h2>Load the .CSV Dataset here</h2><br>
+						<p>load the .csv dataset</p>
+					<p style="color:#CDDC39">This dataset will be used further for classification of stroke disease.</p>
+					</div>
+				</header>
+				<div class="container">
+
+					<!-- Content -->
+						<section id="content">
+							<center>
+								<form action="{{url_for('upload')}}" method="post" enctype="multipart/form-data">
+								  <input type="file" id="myFile" name="filename">
+								  <input type="submit" value="submit">
+								</form>
+							</center>
+						</section>
+				</div>
+			</section>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>
